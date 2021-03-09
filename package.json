@@ -80,12 +80,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'husky' lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "src/**": [
-      "prettier --config .prettierrc --write",
+      "prettier --config .prettierrc.js --write",
       "npm run lint",
       "git add"
     ]
