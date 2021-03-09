@@ -80,11 +80,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "echo 'husky'"
     }
   },
   "lint-staged": {
-    
+    "src/**": [
+      "prettier --config .prettierrc --write",
+      "npm run lint",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">= 6.0.0",
