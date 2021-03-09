@@ -92,6 +92,8 @@ export default {
     },
     methods: {
         aaa () {
+
+          
             console.log(123123);
         }
     }
