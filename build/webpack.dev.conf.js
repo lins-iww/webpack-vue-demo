@@ -24,7 +24,7 @@ module.exports = {
     'main': './src/main.js'
   },
   resolve: {
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.vue', '.ts'],
     alias: {
       '@': path.join(__dirname, '..', '/src'),
       'vue$': 'vue/dist/vue.esm.js' //内部为正则表达式  vue结尾的
@@ -41,19 +41,32 @@ module.exports = {
     rules: [
       ...cssLoaders,
       {
-        test: /\.(js|ts)$/,
-        use: ['babel-loader', 'eslint-loader', 'ts-loader'],
+        test: /\.js$/,
+        use: ['babel-loader'],
         include: [resolve('src')],
         exclude: /node_modules/
       },
       {
-        test: /\.(jpg|jpeg|png)$/,
-        loader: 'url-loader',
-        exclude: /node_modules/
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            ts: 'ts-loader',
+            tsx: 'babel-loader!ts-loader',
+          }
+        }
       },
       {
-        test: /\.vue$/,
-        use: ['vue-loader'],
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+          appendTsSuffixTo: [/\.vue$/]
+        }
+      },
+      {
+        test: /\.(jpg|jpeg|png)$/,
+        loader: 'url-loader',
         exclude: /node_modules/
       },
     ],
@@ -98,7 +111,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin({}),
     new ESLintPlugin({
       exclude: 'node_modules',
-      include: '/src',
       extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx']
     }),
     new OptimizeCssAssetsWebpackPlugin({}),

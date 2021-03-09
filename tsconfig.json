@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    /***************** 基本选项 *****************/
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "es5",
+      "es2015",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "allowJs": true, /* 对js文件进行编译 */
+    "checkJs": false, /* 对js语法进行检测 */
+    "jsx": "preserve",
+    "sourceMap": true,
+    "isolatedModules": true, /* 将每个文件作为单独的模块 */
+    "removeComments": true, /* 删除所有注释，除了以 /!*开头的版权信息 */
+
+    /***************** 严格类型检查 *****************/
+    "strict": true, /* 启用所有严格类型检查选项 */
+    "noImplicitAny": false, /* 在表达式和声明上有隐含的any类型时报错 */
+    "noImplicitThis": true, /* 当this表达式的值为any类型的时候，生成一个错误 */
+    // "noUnusedLocals": true, /* 若有未使用的局部变量则抛错 */
+    // "noUnusedParameters": true, /* 若有未使用的参数则抛错 */
+    "strictNullChecks": true, /* 强制检查null类型 */
+    "alwaysStrict": true, /* 以严格模式解析并为每个源文件生成`use strict`语句 */
+    "strictPropertyInitialization": false,
+
+    /***************** 暂时还未注解的格式 *****************/
+    "importHelpers": true, /* 从 tslib 导入辅助工具函数 */
+    "experimentalDecorators": true, /* 启用实验性的ES装饰器 */
+    "esModuleInterop": true, /* 允许从没有设置默认导出的模块中默认导入 */
+    "allowSyntheticDefaultImports": true,
+
+    /***************** 模块解析选项 *****************/
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
+    }
+  },
+  "include": [
+    "types/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue", "src/components/shrinkBlock/floatShrink.tsvue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
