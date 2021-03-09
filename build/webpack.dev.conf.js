@@ -98,6 +98,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin({}),
     new ESLintPlugin({
       exclude: 'node_modules',
+      include: '/src',
       extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx']
     }),
     new OptimizeCssAssetsWebpackPlugin({}),
