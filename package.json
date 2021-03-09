@@ -80,7 +80,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'husky'"
+      "pre-commit": "echo 'husky' lint-staged"
     }
   },
   "lint-staged": {
