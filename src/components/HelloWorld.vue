@@ -49,12 +49,7 @@ export default {
       msg: 'Welcome to Your Vue.js App 12312'
     }
   },
-  methods: {
-    aaa(aaa: number) {
-      console.log(12312312312)
-      console.log(123123)
-    }
-  }
+  methods: {}
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -5,11 +5,6 @@ const HelloWorld = () => {
 }
 
 Vue.use(Router)
-function a(d: number): number {
-  console.log(d * 2)
-  return d * 2
-}
-a(3)
 export default new Router({
   routes: [
     {

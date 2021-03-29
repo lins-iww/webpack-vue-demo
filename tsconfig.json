@@ -53,7 +53,7 @@
     "types/**/*",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue", "src/components/shrinkBlock/floatShrink.tsvue"
+    "src/**/*.vue",
   ],
   "exclude": [
     "node_modules"
